@@ -13,6 +13,7 @@ namespace RegexProblem
             RegexProgram regex = new RegexProgram();
             regex.ValidateFirstName("Aarti");
             regex.ValidateLastName("Pundalik");
+            regex.ValidateEmail("abc.xyz@bl.co.in");
             Console.ReadLine();
         }
     }
