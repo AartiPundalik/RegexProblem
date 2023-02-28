@@ -101,6 +101,18 @@ namespace RegexProblem
                 Console.WriteLine("Numeric password is not matching with Regex");
             }
         }
+        public void ValidateSpecialCharacter(string character)
+        {
+            string spclChar = "[0-9a-zA-Z][!@#$%&*]{1}";
+            if (Regex.IsMatch(character, spclChar))
+            {
+                Console.WriteLine("Special Character is matched with Regex");
+            }
+            else
+            {
+                Console.WriteLine("Special Character is not matched with Regex");
+            }
+        }
     }
 }
 
