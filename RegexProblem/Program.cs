@@ -17,6 +17,7 @@ namespace RegexProblem
             regex.ValidatePhoneNumber("91 8668285117");
             regex.ValidatePassword("Password");
             regex.ValidateStringPassword("Aarti123");
+            regex.ValidateNumericPassword("Aarti689");
             Console.ReadLine();
         }
     }
