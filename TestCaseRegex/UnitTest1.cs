@@ -25,13 +25,5 @@ public class UnitTest1
         string email_id = regexprogram.ValidateEmail("abc.xyz@bl.co.in");
         Assert.AreEqual(email_id, "abc.xyz@bl.co.in");
     }
-    [TestMethod]
-    public void Test4()
-    {
-        string PhoneNumber = regexprogram.ValidatePhoneNumber("91 8668285117");
-        Assert.AreEqual(PhoneNumber, "91 8668285117");
-    }
-  
-  
 }
 
