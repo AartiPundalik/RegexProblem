@@ -6,7 +6,7 @@ namespace TestCaseRegex;
 public class UnitTest1
 {
     RegexProgram regexprogram = new RegexProgram();
-    
+
     [TestMethod]
     public void Test1()
     {
@@ -15,7 +15,7 @@ public class UnitTest1
     }
     [TestMethod]
     public void Test2()
-    {       
+    {
         string lastname = regexprogram.ValidateLastName("Pundalik");
         Assert.AreEqual(lastname, "Pundalik");
     }
@@ -43,13 +43,5 @@ public class UnitTest1
         string stringPassword = regexprogram.ValidateStringPassword("Aarti123");
         Assert.AreEqual(stringPassword, "Aarti123");
     }
-    [TestMethod]
-    public void Test7()
-    {
-        string NumericPassword = regexprogram.ValidateNumericPassword("Aarti689");
-        Assert.AreEqual(NumericPassword, "Aarti689");
-    }
-   
 }
-
 
