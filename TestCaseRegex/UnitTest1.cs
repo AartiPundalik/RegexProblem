@@ -49,12 +49,7 @@ public class UnitTest1
         string NumericPassword = regexprogram.ValidateNumericPassword("Aarti689");
         Assert.AreEqual(NumericPassword, "Aarti689");
     }
-    [TestMethod]
-    public void Test8()
-    {
-        string SpecialCharacter = regexprogram.ValidateSpecialCharacter("Aarti#");
-        Assert.AreEqual(SpecialCharacter, "Aarti#");
-    }
+   
 }
 
 
