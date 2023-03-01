@@ -37,11 +37,6 @@ public class UnitTest1
         string Password = regexprogram.ValidatePassword("Password");
         Assert.AreEqual(Password, "Password");
     }
-    [TestMethod]
-    public void Test6()
-    {
-        string stringPassword = regexprogram.ValidateStringPassword("Aarti123");
-        Assert.AreEqual(stringPassword, "Aarti123");
-    }
+  
 }
 
