@@ -10,7 +10,7 @@ namespace RegexProblem
 {
     public class RegexProgram
     {
-        public void ValidateFirstName(string name)
+        public string  ValidateFirstName(string name)
         {
             //Aarti
             string FirstName = "^[A-Z][a-z]{3,}?";
@@ -22,9 +22,10 @@ namespace RegexProblem
             {
                 Console.WriteLine("First Name is not Matching with regex");
             }
+            return name;
 
         }
-        public void ValidateLastName(string name)
+        public string  ValidateLastName(string name)
         {
             //Pundalik
             string lastName = "^[A-Z][a-z]{3,}?";
@@ -36,8 +37,9 @@ namespace RegexProblem
             {
                 Console.WriteLine("Last Name is not matching with Regex");
             }
+            return name;
         }
-        public void ValidateEmail(string email)
+        public string ValidateEmail(string email)
         {
             //abc.xyz@bridgelabz.co.in
             string emailID = "^[a-zA-Z]+[.+_-]{0,1}[a-z]+[@][a-zA-Z]+[.][a-z]{2,3}([.][a-z]{2}){0,1}$";
@@ -50,8 +52,9 @@ namespace RegexProblem
             {
                 Console.WriteLine("Email is not matching with Regex");
             }
+            return email;
         }
-        public void ValidatePhoneNumber(string phoneNumber)
+        public string ValidatePhoneNumber(string phoneNumber)
         {
             //"91 0127131236"
             string phoneNum = @"[0-9]{2}[ ][0-9]{10}";  
@@ -63,9 +66,10 @@ namespace RegexProblem
             {
                 Console.WriteLine("Phone Number is not matching with Regex ");
             }
+            return phoneNumber;
         }
     
-    public void ValidatePassword(string pswrd)
+    public string ValidatePassword(string pswrd)
     {
         string password = @"[A-Z]{1}[a-z0-9]";
         if (Regex.IsMatch(pswrd, password))
@@ -76,8 +80,9 @@ namespace RegexProblem
         {
             Console.WriteLine("Password is not matching with Regex");
         }
+        return pswrd;
     }
-        public void ValidateStringPassword(string numPassword)
+        public string ValidateStringPassword(string numPassword)
         {
             string password = "[A-Z]{1,}[a-z0-9]";
             if (Regex.IsMatch(numPassword, password))
@@ -88,8 +93,9 @@ namespace RegexProblem
             {
                 Console.WriteLine("Numeric password is not matching with Regex");
             }
+            return numPassword;
         }
-        public void ValidateNumericPassword(string numPassword)
+        public string ValidateNumericPassword(string numPassword)
         {
             string password = "[a-zA-Z][0-9]{1,}";
             if (Regex.IsMatch(numPassword, password))
@@ -100,8 +106,9 @@ namespace RegexProblem
             {
                 Console.WriteLine("Numeric password is not matching with Regex");
             }
+            return numPassword;
         }
-        public void ValidateSpecialCharacter(string character)
+        public string ValidateSpecialCharacter(string character)
         {
             string spclChar = "[0-9a-zA-Z][!@#$%&*]{1}";
             if (Regex.IsMatch(character, spclChar))
@@ -112,6 +119,7 @@ namespace RegexProblem
             {
                 Console.WriteLine("Special Character is not matched with Regex");
             }
+            return character;
         }
     }
 }
