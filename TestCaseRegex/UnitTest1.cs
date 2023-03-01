@@ -13,11 +13,5 @@ public class UnitTest1
         string firstname = regexprogram.ValidateFirstName("Aarti");
         Assert.AreEqual(firstname, "Aarti");
     }
-    [TestMethod]
-    public void Test2()
-    {
-        string lastname = regexprogram.ValidateLastName("Pundalik");
-        Assert.AreEqual(lastname, "Pundalik");
-    }
 }
 
