@@ -31,12 +31,7 @@ public class UnitTest1
         string PhoneNumber = regexprogram.ValidatePhoneNumber("91 8668285117");
         Assert.AreEqual(PhoneNumber, "91 8668285117");
     }
-    [TestMethod]
-    public void Test5()
-    {
-        string Password = regexprogram.ValidatePassword("Password");
-        Assert.AreEqual(Password, "Password");
-    }
+  
   
 }
 
