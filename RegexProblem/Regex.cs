@@ -83,22 +83,29 @@ namespace RegexProblem
                 throw new UserRegistrationException(ExceptionType.Null_EMAIL_ID, "Please do not Enter the Null Input");
             }
         }
-        
+
         public string ValidatePhoneNumber(string phoneNumber)
         {
             //"91 0127131236"
-            string phoneNum = @"[0-9]{2}[ ][0-9]{10}";  
-            if (Regex.IsMatch(phoneNumber, phoneNum))
+            string phoneNum = @"[0-9]{2}[ ][0-9]{10}";
+            try
             {
-                Console.WriteLine("Phone Number is matching with regex");
+                if (Regex.IsMatch(phoneNumber, phoneNum))
+                {
+                    Console.WriteLine("Phone Number is matching with regex");
+                }
+                else
+                {
+                    Console.WriteLine("Phone Number is not matching with Regex ");
+                }
+                return phoneNumber;
             }
-            else
+            catch (NullReferenceException)
             {
-                Console.WriteLine("Phone Number is not matching with Regex ");
+                throw new UserRegistrationException(ExceptionType.Null_PHONENUMBER, "Please do not Enter the Null Input");
             }
-            return phoneNumber;
         }
-    
+
     public string ValidatePassword(string pswrd)
     {
         string password = @"[A-Z]{1}[a-z0-9]";

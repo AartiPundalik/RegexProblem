@@ -13,7 +13,7 @@ namespace RegexProblem
             Null_FIRSTNAME,
             Null_LASTNAME,
             Null_EMAIL_ID,
-            
+            Null_PHONENUMBER,
         }
         public ExceptionType Type;
 

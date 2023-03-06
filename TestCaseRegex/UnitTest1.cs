@@ -31,12 +31,24 @@ public class UnitTest1
             Assert.AreEqual("Please do not Enter the Null Input", obj.Message);
         }
     }
+    [TestMethod]
+    public void Given_Empty_EMAILID_Should_Throw_UserRegistrationException_Indicating_EmptyInput()
+    {
+        try
+        {
+            string result = regexprogram.ValidateEmail("abc.xyz@bl.co.in");
+        }
+        catch (UserRegistrationException obj)
+        {
+            Assert.AreEqual("Please do not Enter the Null Input", obj.Message);
+        }
+    }
         [TestMethod]
-        public void Given_Empty_EMAILID_Should_Throw_UserRegistrationException_Indicating_EmptyInput()
+        public void Given_Empty_PHONENUMBER_Should_Throw_UserRegistrationException_Indicating_EmptyInput()
         {
             try
             {
-                string result = regexprogram.ValidateEmail("abc.xyz@bl.co.in");
+                string result = regexprogram.ValidatePhoneNumber("91 8668285117");
             }
             catch (UserRegistrationException obj)
             {
@@ -44,5 +56,6 @@ public class UnitTest1
             }
         }
     }
+    
 
 
