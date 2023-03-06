@@ -4,25 +4,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
-
+using static RegexProblem.UserRegistrationException;
 
 namespace RegexProblem
 {
     public class RegexProgram
     {
+        string message;
+
+        public RegexProgram(string message)
+        {
+            this.message = message;
+        }
         public string  ValidateFirstName(string name)
         {
             //Aarti
             string FirstName = "^[A-Z][a-z]{3,}?";
-            if (Regex.IsMatch(name, FirstName))
+            try
             {
-                Console.WriteLine("First Name is Matching with regex");
+                if (Regex.IsMatch(name, FirstName))
+                {
+                    Console.WriteLine("First Name is Matching with regex");
+                }
+                else
+                {
+                    Console.WriteLine("First Name is not Matching with regex");
+                }
+                return name;
             }
-            else
+            catch (NullReferenceException)
             {
-                Console.WriteLine("First Name is not Matching with regex");
+                throw new UserRegistrationException(ExceptionType.Null_FIRSTNAME, "Please do not Enter the Null Input");
             }
-            return name;
 
         }
         public string  ValidateLastName(string name)

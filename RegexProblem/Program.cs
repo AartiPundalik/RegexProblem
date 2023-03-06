@@ -10,7 +10,7 @@ namespace RegexProblem
     {
         static void Main(string[] args)
         {
-            RegexProgram regex = new RegexProgram();
+            RegexProgram regex = new RegexProgram(null);
             regex.ValidateFirstName("Aarti");
             regex.ValidateLastName("Pundalik");
             regex.ValidateEmail("abc.xyz@bl.co.in");
