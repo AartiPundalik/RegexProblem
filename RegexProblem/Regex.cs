@@ -42,15 +42,24 @@ namespace RegexProblem
         {
             //Pundalik
             string lastName = "^[A-Z][a-z]{3,}?";
-            if (Regex.IsMatch(name, lastName))
+            try
             {
-                Console.WriteLine("Last name is matching with Regex");
+                if (Regex.IsMatch(name, lastName))
+                {
+                    Console.WriteLine("Last name is matching with Regex");
+                }
+                else
+                {
+                    Console.WriteLine("Last Name is not matching with Regex");
+                }
+                return name;
             }
-            else
+            catch (NullReferenceException)
             {
-                Console.WriteLine("Last Name is not matching with Regex");
+                throw new UserRegistrationException(ExceptionType.Null_LASTNAME, "Please do not Enter the Null Input");
             }
-            return name;
+
+
         }
         public string ValidateEmail(string email)
         {

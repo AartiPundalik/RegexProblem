@@ -19,5 +19,17 @@ public class UnitTest1
             Assert.AreEqual("Please do not Enter the Null Input", obj.Message);
         }
     }
+        [TestMethod]
+        public void Given_Empty_LastName_Should_Throw_UserRegistrationException_Indicating_EmptyInput()
+        {
+            try
+            {
+                string result = regexprogram.ValidateLastName("Pundalik");
+            }
+            catch (UserRegistrationException obj)
+            {
+                Assert.AreEqual("Please do not Enter the Null Input", obj.Message);
+            }
+        }
 }
 

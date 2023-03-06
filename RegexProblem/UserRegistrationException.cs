@@ -11,6 +11,7 @@ namespace RegexProblem
         public enum ExceptionType
         {
             Null_FIRSTNAME,
+            Null_LASTNAME,
             
         }
         public ExceptionType Type;
