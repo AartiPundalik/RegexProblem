@@ -17,6 +17,7 @@ namespace RegexProblem
             Null_PASSWORD,
             Null_STRINGPASSWORD,
             Null_NUMERICPASSWORD,
+            Null_SPECIALCHARACTER,
         }
         public ExceptionType Type;
 

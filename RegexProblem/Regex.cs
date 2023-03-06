@@ -173,15 +173,23 @@ namespace RegexProblem
         public string ValidateSpecialCharacter(string character)
         {
             string spclChar = "[0-9a-zA-Z][!@#$%&*]{1}";
-            if (Regex.IsMatch(character, spclChar))
+            try
             {
-                Console.WriteLine("Special Character is matched with Regex");
+                if (Regex.IsMatch(character, spclChar))
+                {
+                    Console.WriteLine("Special Character is matched with Regex");
+                }
+                else
+                {
+                    Console.WriteLine("Special Character is not matched with Regex");
+                }
+                return character;
             }
-            else
+            catch (NullReferenceException)
             {
-                Console.WriteLine("Special Character is not matched with Regex");
+                throw new UserRegistrationException(ExceptionType.Null_SPECIALCHARACTER, "Please do not Enter the Null Input");
             }
-            return character;
+
         }
     }
 }

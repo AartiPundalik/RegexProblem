@@ -79,12 +79,24 @@ public class UnitTest1
             Assert.AreEqual("Please do not Enter the Null Input", obj.Message);
         }
     }
+    [TestMethod]
+    public void Given_Empty_NUMERICPASSWORD_Should_Throw_UserRegistrationException_Indicating_EmptyInput()
+    {
+        try
+        {
+            string result = regexprogram.ValidateNumericPassword("Aarti689");
+        }
+        catch (UserRegistrationException obj)
+        {
+            Assert.AreEqual("Please do not Enter the Null Input", obj.Message);
+        }
+    }
         [TestMethod]
-        public void Given_Empty_NUMERICPASSWORD_Should_Throw_UserRegistrationException_Indicating_EmptyInput()
+        public void Given_SPECIALCHARACTER_Should_Throw_UserRegistrationException_Indicating_EmptyInput()
         {
             try
             {
-                string result = regexprogram.ValidateNumericPassword("Aarti689");
+                string result = regexprogram.ValidateSpecialCharacter("Aarti#");
             }
             catch (UserRegistrationException obj)
             {
@@ -92,6 +104,8 @@ public class UnitTest1
             }
         }
     }
+
+    
     
     
 
