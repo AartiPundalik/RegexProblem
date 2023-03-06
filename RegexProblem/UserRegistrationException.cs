@@ -14,6 +14,7 @@ namespace RegexProblem
             Null_LASTNAME,
             Null_EMAIL_ID,
             Null_PHONENUMBER,
+            Null_PASSWORD,
         }
         public ExceptionType Type;
 

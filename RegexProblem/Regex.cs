@@ -16,7 +16,7 @@ namespace RegexProblem
         {
             this.message = message;
         }
-        public string  ValidateFirstName(string name)
+        public string ValidateFirstName(string name)
         {
             //Aarti
             string FirstName = "^[A-Z][a-z]{3,}?";
@@ -38,7 +38,7 @@ namespace RegexProblem
             }
 
         }
-        public string  ValidateLastName(string name)
+        public string ValidateLastName(string name)
         {
             //Pundalik
             string lastName = "^[A-Z][a-z]{3,}?";
@@ -106,19 +106,27 @@ namespace RegexProblem
             }
         }
 
-    public string ValidatePassword(string pswrd)
-    {
-        string password = @"[A-Z]{1}[a-z0-9]";
-        if (Regex.IsMatch(pswrd, password))
+        public string ValidatePassword(string pswrd)
         {
-            Console.WriteLine("Password is matching with Regex");
+            string password = @"[A-Z]{1}[a-z0-9]";
+            try
+            {
+                if (Regex.IsMatch(pswrd, password))
+                {
+                    Console.WriteLine("Password is matching with Regex");
+                }
+                else
+                {
+                    Console.WriteLine("Password is not matching with Regex");
+                }
+                return pswrd;
+            }
+            catch (NullReferenceException)
+            {
+                throw new UserRegistrationException(ExceptionType.Null_PASSWORD, "Please do not Enter the Null Input");
+            }
+
         }
-        else
-        {
-            Console.WriteLine("Password is not matching with Regex");
-        }
-        return pswrd;
-    }
         public string ValidateStringPassword(string numPassword)
         {
             string password = "[A-Z]{1,}[a-z0-9]";
@@ -132,6 +140,7 @@ namespace RegexProblem
             }
             return numPassword;
         }
+
         public string ValidateNumericPassword(string numPassword)
         {
             string password = "[a-zA-Z][0-9]{1,}";
