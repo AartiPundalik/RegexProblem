@@ -65,17 +65,25 @@ namespace RegexProblem
         {
             //abc.xyz@bridgelabz.co.in
             string emailID = "^[a-zA-Z]+[.+_-]{0,1}[a-z]+[@][a-zA-Z]+[.][a-z]{2,3}([.][a-z]{2}){0,1}$";
+            try
+            {
 
-            if (Regex.IsMatch(email, emailID))
-            {
-                Console.WriteLine("Email id is matching with Regex");
+                if (Regex.IsMatch(email, emailID))
+                {
+                    Console.WriteLine("Email id is matching with Regex");
+                }
+                else
+                {
+                    Console.WriteLine("Email is not matching with Regex");
+                }
+                return email;
             }
-            else
+            catch (NullReferenceException)
             {
-                Console.WriteLine("Email is not matching with Regex");
+                throw new UserRegistrationException(ExceptionType.Null_EMAIL_ID, "Please do not Enter the Null Input");
             }
-            return email;
         }
+        
         public string ValidatePhoneNumber(string phoneNumber)
         {
             //"91 0127131236"

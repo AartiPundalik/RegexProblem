@@ -12,6 +12,7 @@ namespace RegexProblem
         {
             Null_FIRSTNAME,
             Null_LASTNAME,
+            Null_EMAIL_ID,
             
         }
         public ExceptionType Type;
