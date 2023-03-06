@@ -16,6 +16,7 @@ namespace RegexProblem
             Null_PHONENUMBER,
             Null_PASSWORD,
             Null_STRINGPASSWORD,
+            Null_NUMERICPASSWORD,
         }
         public ExceptionType Type;
 

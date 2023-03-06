@@ -152,15 +152,23 @@ namespace RegexProblem
         public string ValidateNumericPassword(string numPassword)
         {
             string password = "[a-zA-Z][0-9]{1,}";
-            if (Regex.IsMatch(numPassword, password))
+            try
             {
-                Console.WriteLine("Numeric Password is matching with Regex");
+                if (Regex.IsMatch(numPassword, password))
+                {
+                    Console.WriteLine("Numeric Password is matching with Regex");
+                }
+                else
+                {
+                    Console.WriteLine("Numeric password is not matching with Regex");
+                }
+                return numPassword;
             }
-            else
+            catch (NullReferenceException)
             {
-                Console.WriteLine("Numeric password is not matching with Regex");
+                throw new UserRegistrationException(ExceptionType.Null_NUMERICPASSWORD, "Please do not Enter the Null Input");
             }
-            return numPassword;
+
         }
         public string ValidateSpecialCharacter(string character)
         {
